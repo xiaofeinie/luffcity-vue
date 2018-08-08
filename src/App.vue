@@ -16,26 +16,34 @@
           <!-- Collect the nav links, forms, and other content for toggling -->
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-            
-              
-              <router-link 
-              v-for=" (route,index) in allRoutes"
-              v-bind:to='route.path'
-              v-bind:key=index
+            <router-link
+                        to="/"
+                        tag="li"
+                         activeClass = 'active'
+                         exact
+            ><a>首页</a></router-link>
+            <router-link
+              to="/coures"
               tag="li"
-              activeClass = 'active'
-              exact
-              >
-              <a>{{route.name}}</a>
-              </router-link>
-              
-              
+             activeClass = 'active'
+             exact><a>课程列表</a></router-link>
+
+
+
+
             </ul>
-           
+
             <ul class="nav navbar-nav navbar-right">
+              <router-link
+                    to="/login"
+                    tag="li"
+                    activeClass = 'active'
+                    exact><a>登录</a>
+
+                    </router-link>
               <li><a href="#">登录</a></li>
               <li><a href="#">注册</a></li>
-              
+
             </ul>
           </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
