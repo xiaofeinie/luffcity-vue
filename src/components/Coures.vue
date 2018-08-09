@@ -44,15 +44,12 @@
                 {'id':4, 'name':'C#基础'},
               ],
               arg:'',
-              price_title:[
-                {'title_id':'','price_id':''}
-              ]
+              price_title:{'title_id':'','price_id':''}
+
             }
         },
         mounted(){
             this.initCourse();
-            // this.addList();
-            // this.addShoppCar()
         },
       methods:{
           initCourse:function () {
@@ -62,8 +59,8 @@
               method:'GET',
               responseType:'json',
             }).then(function (arg) {
-              _this.arg=arg
-              console.log(arg)
+              _this.arg=arg;
+              console.log(arg);
               if (arg.data.code === 1000) {
                 _this.courseList = arg.data.data
               }else{
@@ -74,7 +71,7 @@
             })
           },
           addList:function (e) {
-            this.price_title[0] = {'price_id':e.target.getAttribute('price_id'),'title_id':e.target.getAttribute('title_id')}
+            this.price_title = {'price_id':e.target.getAttribute('price_id'),'title_id':e.target.getAttribute('title_id')}
           },
 
 
@@ -90,7 +87,13 @@
               },
               responseType:'json',
             }).then(function (arg) {
-              console.log(arg)
+              console.log(arg);
+              if (arg.data.code === 200) {
+                  alert(arg.data.data)
+              }else {
+                alert(arg.data.error)
+              }
+
 
             }).catch(function (error) {
               console.log(error)

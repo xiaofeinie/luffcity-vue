@@ -41,8 +41,15 @@
                     exact><a>登录</a>
 
                     </router-link>
-              <li><a href="#">登录</a></li>
+
               <li><a href="#">注册</a></li>
+              <router-link
+                    to="/shopping_car"
+                    tag="li"
+                    activeClass = 'active'
+                    exact><a>购物车</a>
+
+                    </router-link>
 
             </ul>
           </div><!-- /.navbar-collapse -->
